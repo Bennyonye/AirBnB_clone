@@ -1,4 +1,5 @@
 # AirBnB_clone
+========================================
 ##### Group project Python OOP
 
 ## Background Context
@@ -102,7 +103,7 @@ More Info
 Execution
 Your shell should work like this in interactive mode:
 
-  *** $ ./console.py
+  $ ./console.py
   (hbnb) help
 
   Documented commands (type help <topic>):
@@ -112,7 +113,7 @@ Your shell should work like this in interactive mode:
   (hbnb) 
   (hbnb) 
   (hbnb) quit
-  $ ***
+  $ 
 But also in non-interactive mode: (like the Shell project in C)
 
 
