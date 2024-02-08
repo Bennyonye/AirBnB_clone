@@ -3,7 +3,7 @@
 ##### Group project Python OOP
 
 ## Background Context
-Welcome to the AirBnB clone project! [ALX](https://intranet.alxswe.com/projects/263)
+Welcome to the AirBnB clone project!
 Before starting, please read the AirBnB concept page.
 
 __The first step is writing a command interpreter to manage your AirBnB objects.__
@@ -113,7 +113,19 @@ By
   * Daniel Izevbije
 
 
+```
+$ ./console.py
+(hbnb) help
 
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+
+(hbnb) 
+(hbnb) 
+(hbnb) quit
+$
+```
 
 
 
