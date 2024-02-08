@@ -1,204 +1,112 @@
-## AirBnB Clone Console
+# AirBnB Clone Project - The Console
 
-### Table of Contents
+![AirBnB Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Airbnb_Logo_B%C3%A9lo.svg/1280px-Airbnb_Logo_B%C3%A9lo.svg.png)
 
-* [Introduction](#introduction)
-* [Environment](#environment)
-* [Installation](#installation)
-* [Testing](#testing)
-* [Usage](#usage)
-* [Authors](#authors)
+## Project Description
 
-### Introduction
+The AirBnB Clone project is an endeavor to replicate the core functionalities of the renowned platform Airbnb. In this initial phase, the focus is on developing a command-line interpreter (CLI) to handle AirBnB objects. This CLI lays the groundwork for subsequent tasks such as HTML/CSS templating, database storage, API integration, and front-end development.
 
-This project aims to build a clone of [AirBnB](https://www.airbnb.com/). The console serves as a command interpreter for managing object abstraction and storage. For more information, refer to the [Wiki](https://github.com/ralexrivero/AirBnB_clone/wiki).
+## Command Interpreter Overview
 
-Tasks performed by the console include:
+The command interpreter, implemented in `console.py`, acts as a tool for interacting with and managing AirBnB objects. It enables users to perform operations like creating, retrieving, updating, and deleting objects. Modeled after a Shell-like interface, the interpreter provides commands for manipulating AirBnB objects.
 
-* Creating a new object
-* Retrieving an object from a file
-* Performing operations on objects
-* Destroying an object
+## Getting Started
 
-#### Storage
+To launch the AirBnB Clone command interpreter, follow these steps:
 
-All classes are managed by the `Storage` engine within the `FileStorage` class.
+1. Clone the repository to your local machine:
 
-### Environment
+   ```bash
+   git clone https://github.com/your-username/AirBnB_clone.git
+   ```
 
-* [Ubuntu](https://ubuntu.com/)
-* [GNU Bash](https://www.gnu.org/software/bash/)
-* [Python](https://www.python.org)
-* [Vim](https://www.vim.org/)
-* [Visual Studio Code](https://code.visualstudio.com/)
-* [Git](https://git-scm.com/)
-* [GitHub](https://github.com)
+2. Navigate to the project directory:
 
-Style guidelines:
+   ```bash
+   cd AirBnB_clone
+   ```
 
-* [pycodestyle (version 2.7.*)](https://pypi.org/project/pycodestyle/)
-* [PEP8](https://pep8.org/)
+3. Run the command interpreter:
 
-Development and testing were conducted on Ubuntu 20.04 LTS using Python 3.8.3. Editors used include Vim 8.1.2269, VSCode 1.6.1, and Atom 1.58.0. Version control was managed using Git 2.25.1.
+   ```bash
+   ./console.py
+   ```
 
-### Installation
+## Usage Guide
 
-```bash
-git clone https://github.com/aysuarex/AirBnB_clone.git
-```
+Once the command interpreter is running, you can utilize the following commands to manage AirBnB objects:
 
-Navigate to the `AirBnb` directory and execute:
+- `create`: Create a new AirBnB object (e.g., User, State, City, Place).
+  Example:
+  ```bash
+  (hbnb) create User
+  ```
 
-```bash
-./console.py
-```
+- `show`: Retrieve information about a specific object by specifying its class name and ID.
+  Example:
+  ```bash
+  (hbnb) show User 1234-5678-9012
+  ```
 
-#### Execution
+- `all`: List all objects of a given class or list all objects if no class is specified.
+  Example:
+  ```bash
+  (hbnb) all
+  (hbnb) all State
+  ```
 
-In interactive mode:
+- `update`: Update attributes of an object by specifying its class name, ID, attribute name, and attribute value.
+  Example:
+  ```bash
+  (hbnb) update User 1234-5678-9012 first_name "John"
+  ```
 
-```bash
-$ ./console.py
-(hbnb) help
+- `destroy`: Delete an object by specifying its class name and ID.
+  Example:
+  ```bash
+  (hbnb) destroy Place 9876-5432-1098
+  ```
 
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
+- `quit` or `EOF`: Exit the command interpreter.
+  Example:
+  ```bash
+  (hbnb) quit
+  ```
 
-(hbnb)
-(hbnb)
-(hbnb) quit
-$
-```
+- `help`: Display a list of available commands or get help for a specific command.
+  Example:
+  ```bash
+  (hbnb) help
+  (hbnb) help show
+  ```
 
-In Non-interactive mode:
+## Examples
 
-```bash
-$ echo "help" | ./console.py
-(hbnb)
+Here are some examples illustrating the usage of the AirBnB Clone command interpreter:
 
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-(hbnb)
-$
-$ cat test_help
-help
-$
-$ cat test_help | ./console.py
-(hbnb)
+1. Creating a new User object:
+   ```bash
+   (hbnb) create User
+   ```
 
-Documented commands (type help <topic>):
-========================================
-EOF  help  quit
-(hbnb)
-$
-```
+2. Listing all City objects:
+   ```bash
+   (hbnb) all City
+   ```
 
-### Testing
+3. Updating the name attribute of a Place object:
+   ```bash
+   (hbnb) update Place 1234-5678-9012 name "Cozy Cabin"
+   ```
 
-All tests are defined in the `tests` folder.
+4. Deleting a State object:
+   ```bash
+   (hbnb) destroy State 9876-5432-1098
+   ```
 
-#### Documentation
+5. Exiting the command interpreter:
+   ```bash
+   (hbnb) quit
+   ```
 
-* Modules:
-
-```python
-python3 -c 'print(__import__("my_module").__doc__)'
-```
-
-* Classes:
-
-```python
-python3 -c 'print(__import__("my_module").MyClass.__doc__)'
-```
-
-* Functions (inside and outside a class):
-
-```python
-python3 -c 'print(__import__("my_module").my_function.__doc__)'
-```
-
-and
-
-```python
-python3 -c 'print(__import__("my_module").MyClass.my_function.__doc__)'
-```
-
-#### Python Unit Tests
-
-* unittest module
-* File extension `.py`
-* Files and folders start with `test_`
-* Organization: for `models/base.py`, unit tests in: `tests/test_models/test_base.py`
-* Execution command: `python3 -m unittest discover tests`
-* or: `python3 -m unittest tests/test_models/test_base.py`
-
-#### Run tests in interactive mode
-
-```bash
-echo "python3 -m unittest discover tests" | bash
-```
-
-#### Run tests in non-interactive mode
-
-To run the tests in non-interactive mode, and discover all the tests, you can use the command:
-
-```bash
-python3 -m unittest discover tests
-```
-
-### Usage
-
-* Start the console in interactive mode:
-
-```bash
-$ ./console.py
-(hbnb)
-```
-
-* Use help to see the available commands:
-
-```bash
-(hbnb) help
-
-Documented commands (type help <topic>):
-========================================
-EOF  all  count  create  destroy  help  quit  show  update
-
-(hbnb)
-```
-
-* Quit the console:
-
-```bash
-(hbnb) quit
-$
-```
-
-#### Commands
-
-The commands are displayed in the following format: *Command / usage / example with output*
-
-* Create
-
-Creates a new instance of a given class. The class' ID is printed, and the instance is saved to the file file.json.
-
-```bash
-create <class>
-```
-
-```bash
-(hbnb) create BaseModel
-6cfb47c4-a434-4da7-ac03-2122624c3762
-(hbnb)
-```
-
-* Show
-
-```bash
-show <class> <id>
-```
-
-```bash
-(hbnb) show BaseModel 6cfb47c4-a434-4da7-ac03-212262
+The AirBnB Clone command interpreter offers a convenient means to manage and manipulate AirBnB objects, serving as an indispensable tool for the development of the full-fledged AirBnB clone web application.
