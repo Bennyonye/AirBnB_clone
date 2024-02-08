@@ -110,3 +110,6 @@ Here are some examples illustrating the usage of the AirBnB Clone command interp
    ```
 
 The AirBnB Clone command interpreter offers a convenient means to manage and manipulate AirBnB objects, serving as an indispensable tool for the development of the full-fledged AirBnB clone web application.
+
+## Authors
+   + Benedict Igbukolu
