@@ -113,3 +113,4 @@ The AirBnB Clone command interpreter offers a convenient means to manage and man
 
 ## Authors
    + Benedict Igbukolu
+   + Daniel Izevbije
